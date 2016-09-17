@@ -6,6 +6,7 @@
 #
 attrs==16.2.0
 dj-database-url==0.4.1
+dj-static==0.0.6
 django-graphiql==0.4.4
 Django==1.10.1            # via django-graphiql, graphene-django, graphql-django-view
 graphene-django==1.0.dev20160910000001
@@ -19,3 +20,4 @@ promise==0.4.2            # via graphene, graphql-core, graphql-relay
 psycopg2==2.6.2
 singledispatch==3.4.0.3   # via graphene-django
 six==1.10.0               # via graphene, graphene-django, graphql-core, singledispatch
+static3==0.7.0            # via dj-static

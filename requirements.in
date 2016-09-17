@@ -4,5 +4,6 @@ graphene-django --pre
 django-graphiql
 psycopg2
 gunicorn
+dj-static
 dj-database-url
 attrs
