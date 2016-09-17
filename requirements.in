@@ -1,0 +1,8 @@
+Django
+graphene --pre
+graphene-django --pre
+django-graphiql
+psycopg2
+gunicorn
+dj-database-url
+attrs
