@@ -88,10 +88,16 @@ class Person(graphene.ObjectType):
         return []
 
 
+class Anything(graphene.types.union.Union):
+    class Meta:
+        types = (Person, House, Street)
+
+
 class Query(graphene.ObjectType):
     people = graphene.List(Person)
     houses = graphene.List(House)
     streets = graphene.List(Street)
+    search = graphene.Field(graphene.List(Anything), q=graphene.Argument(graphene.String, required=True))
 
     def resolve_people(self, args, context, info):
         return [Person(p) for p in population.people]
@@ -101,6 +107,12 @@ class Query(graphene.ObjectType):
 
     def resolve_streets(self, args, context, info):
         return [Street(s) for s in population.streets]
+
+    def resolve_search(self, args, context, info):
+        people = [Person(p) for p in population.people if args['q'].lower() in str(p).lower()]
+        houses = [House(h) for h in population.houses if args['q'].lower() in str(h).lower()]
+        streets = [Street(s) for s in population.streets if args['q'].lower() in str(s).lower()]
+        return people + houses + streets
 
 
 schema = graphene.Schema(query=Query)

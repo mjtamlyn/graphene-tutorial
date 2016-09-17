@@ -27,7 +27,7 @@ class Person(object):
     spouse = attr.ib(default=None, cmp=False, repr=False)
 
     def __str__(self):
-        return '%s %s' % (self.name, self.family_name)
+        return '%s %s' % (self.name, self.family)
 
     def begat(self, name):
         other = Person(name=name, family=self.family, residence=self.residence)

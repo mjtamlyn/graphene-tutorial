@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['graphene-tutorial.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'plain',
     'django_graphiql',
 
     'django.contrib.admin',

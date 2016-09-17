@@ -1,0 +1,12 @@
+<h1>"Plain" GraphQL API</h1>
+
+<ul>
+    <li><a href="/plain/graphiql/?query=%7B%0A%20%20streets%20%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D%0A">Simple query</a></li>
+    <li><a href="/plain/graphiql/?query=%7B%0A%20%20streets%20%7B%0A%20%20%20%20name%0A%20%20%20%20houses%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A">Nesting queries</a></li>
+    <li><a href="/plain/graphiql/?query=%7B%0A%20%20streets%20%7B%0A%20%20%20%20name%0A%20%20%7D%0A%20%20houses%20%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D%0A">Multiple queries</a></li>
+    <li><a href="/plain/graphiql/?query=%7B%0A%20%20people%20%7B%0A%20%20%20%20name%0A%20%20%20%20family%0A%20%20%20%20relationships(relationship%3A%20child)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20family%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A">Arguments</a></li>
+    <li><a href="/plain/graphiql/?query=query%20People(%24relationship%3A%20Relationship!)%20%7B%0A%20%20people%20%7B%0A%20%20%20%20name%0A%20%20%20%20family%0A%20%20%20%20relationships(relationship%3A%20%24relationship)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20family%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&variables=%7B%22relationship%22%3A%20%22child%22%7D">Variables</a></li>
+    <li><a href="/plain/graphiql/?query=fragment%20F0%20on%20Person%20%7B%0A%20%20name%0A%20%20residence%20%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D%0A%0A%7B%0A%20%20people%20%7B%0A%20%20%20%20name%0A%20%20%20%20family%0A%20%20%20%20children%3A%20relationships(relationship%3A%20child)%20%7B%0A%20%20%20%20%20%20...F0%0A%20%20%20%20%7D%0A%20%20%20%20parents%3A%20relationships(relationship%3A%20parent)%20%7B%0A%20%20%20%20%20%20...F0%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A">Fragments and Aliases</a></li>
+    <li><a href="/plain/graphiql/?query=%7B%0A%20%20search(q%3A%20%22ysgol%22)%20%7B%0A%20%20%20%20__typename%0A%20%20%20%20...%20on%20Street%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%20%20...%20on%20House%20%7B%0A%20%20%20%20%20%20street%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20number%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A">Inline fragments</a></li>
+    <li><a href="/plain/graphiql/?query=query%20People(%24includeChildren%3A%20Boolean!)%20%7B%0A%20%20people%20%7B%0A%20%20%20%20name%0A%20%20%20%20family%0A%20%20%20%20relationships(relationship%3A%20child)%20%40include(if%3A%20%24includeChildren)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A&variables=%7B%22includeChildren%22%3A%20false%7D">Directives</a></li>
+</ul>
