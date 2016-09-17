@@ -2,7 +2,7 @@ import itertools
 
 import graphene
 
-from village import population
+from . import population
 
 
 class Relationship(graphene.Enum):

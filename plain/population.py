@@ -22,7 +22,6 @@ ysgol_4 = House(ysgol, 4)
 
 houses = [afon_1, afon_2, afon_3, glyn_1, glyn_2, glyn_3, ysgol_1, ysgol_2, ysgol_3, ysgol_4]
 
-# Jones family
 lowri_jones = Person('Lowri', 'Jones', afon_1)
 dafydd_jones = lowri_jones.begat('Dafydd')
 dafydd_jones.moved(glyn_1)
