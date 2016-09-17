@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'not-a-secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not (os.environ.get('DEBUG', '') == 'False')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['graphene-tutorial.herokuapp.com']
 
 
 # Application definition
