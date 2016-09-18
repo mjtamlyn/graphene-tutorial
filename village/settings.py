@@ -34,6 +34,8 @@ ALLOWED_HOSTS = ['graphene-tutorial.herokuapp.com']
 
 INSTALLED_APPS = [
     'plain',
+    'relay',
+
     'django_graphiql',
 
     'django.contrib.admin',
