@@ -20,8 +20,8 @@ class Person(models.Model):
     name = models.CharField(max_length=255)
     family = models.CharField(max_length=255)
     residence = models.ForeignKey(House)
-    parents = models.ManyToManyField('self', blank=True)
-    spouse = models.ForeignKey('self', blank=True, null=True)
+    parents = models.ManyToManyField('self', related_name='children', symmetrical=False, blank=True)
+    spouse = models.ForeignKey('self', related_name='+', blank=True, null=True)
 
     def __str__(self):
         return '%s %s' % (self.name, self.family)
