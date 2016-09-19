@@ -2,6 +2,23 @@
 
 This is the supporting material for a tutorial on Graphene and Relay.
 
+## Set up
+
+### Customizing the database
+
+You can also customize the database used with the `DATABASE_URL` environment var
+(thanks to [dj-database-url](https://github.com/kennethreitz/dj-database-url)),
+if not PostgreSQL will be used as default.
+
+```bash
+export DATABASE_URL='sqlite://test.db'
+```
+
+### Migrate
+
+Set up the models in the database with `python manage.py migrate`.
+
+
 ## Data model
 
 The data model is of a little (fictional!) welsh village. There are 3 streets,
