@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
+
 
 urlpatterns = [
+    url(r'^$', TemplateView.as_view(template_name='application/index.html')),
     url(r'^plain/', include('plain.urls')),
     url(r'^relay/', include('relay.urls')),
     url(r'^admin/', admin.site.urls),

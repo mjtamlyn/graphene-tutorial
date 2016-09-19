@@ -8,6 +8,7 @@ attrs==16.2.0
 dj-database-url==0.4.1
 dj-static==0.0.6
 django-graphiql==0.4.4
+django-webpack-loader==0.3.3
 Django==1.10.1            # via django-graphiql, graphene-django, graphql-django-view
 graphene-django==1.0.dev20160917000001
 graphene==1.0.dev20160918041239

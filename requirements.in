@@ -2,6 +2,7 @@ Django
 graphene --pre
 graphene-django --pre
 django-graphiql
+django-webpack-loader
 psycopg2
 gunicorn
 dj-static

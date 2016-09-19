@@ -33,10 +33,13 @@ ALLOWED_HOSTS = ['graphene-tutorial.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'application',
     'plain',
     'relay',
 
+    'graphene_django',
     'django_graphiql',
+    'webpack_loader',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,3 +123,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'build'),
+)
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'build', 'webpack-stats.json'),
+    }
+}

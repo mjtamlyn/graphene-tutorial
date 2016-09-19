@@ -77,11 +77,9 @@ class Anything(graphene.types.union.Union):
         types = (PersonNode, HouseNode, StreetNode)
 
 
-class Query(graphene.ObjectType):
+class Viewer(graphene.ObjectType):
     streets = graphene.List(StreetNode)
     search = graphene.Field(graphene.List(Anything), q=graphene.Argument(graphene.String, required=True))
-
-    node = relay.Node.Field()
 
     def resolve_streets(self, args, context, info):
         return Street.objects.all()
@@ -92,6 +90,14 @@ class Query(graphene.ObjectType):
         houses = House.objects.annotate(name=Concat(F('number'), Value(' '), F('street__name'), output_field=models.TextField())).filter(name__icontains=term)
         streets = Street.objects.filter(name__icontains=term)
         return itertools.chain(people, houses, streets)
+
+
+class Query(graphene.ObjectType):
+    viewer = graphene.Field(Viewer)
+    node = relay.Node.Field()
+
+    def resolve_viewer(self, args, context, info):
+        return Viewer()
 
 
 schema = graphene.Schema(query=Query)
