@@ -4,7 +4,7 @@
   "description": "Tutorial for graphene and relay",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --display-error-details && python manage.py collectstatic"
+    "build": "webpack --display-error-details"
   },
   "repository": {
     "type": "git",
