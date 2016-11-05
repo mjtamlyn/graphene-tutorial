@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'village.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost/village')}
+DATABASES = {'default': dj_database_url.config(default='sqlite:///db.sqlite')}
 
 
 # Password validation

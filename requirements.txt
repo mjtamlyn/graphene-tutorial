@@ -9,11 +9,10 @@ dj-database-url==0.4.1
 dj-static==0.0.6
 django-graphiql==0.4.4
 django-webpack-loader==0.3.3
-Django==1.10.1            # via django-graphiql, graphene-django, graphql-django-view
-graphene-django==1.0.dev20160917000001
-graphene==1.0.dev20160918041239
-graphql-core==1.0.dev20160909040033  # via graphene, graphql-django-view, graphql-relay
-graphql-django-view==1.4  # via graphene-django
+Django==1.10.1            # via django-graphiql, graphene-django
+graphene-django==1.0
+graphene==1.0.1
+graphql-core==1.0         # via graphene, graphql-relay
 graphql-relay==0.4.4      # via graphene
 gunicorn==19.6.0
 iso8601==0.1.11           # via graphene-django

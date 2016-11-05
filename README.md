@@ -1,6 +1,7 @@
 # An introduction to Graphene and Relay
 
-This is the supporting material for a tutorial on Graphene and Relay.
+This is the supporting material for a tutorial on Graphene and Relay.  For the
+slides, check out this [speaker deck](https://speakerdeck.com/mjtamlyn/an-introduction-to-graphene-and-relay)
 
 ## Data model
 
@@ -23,3 +24,36 @@ The `relay` directory contains a Relay-compliant, Django database model backed
 implementation of the data model.
 
 The `application` directory contains a full Relay application.
+
+## Getting started
+
+To run this application locally, use the following steps:
+
+- **Clone this repository and pip install requirements**
+
+- **Migrate and populate your new village**
+From the root directory of the project:
+
+```
+./manage.py migrate
+./manage.py create_village
+```
+
+N.B.  This tutorial uses a basic sqlite database. You can change `settings.py`
+to use a different [dj_database_url](https://github.com/kennethreitz/dj-database-url)
+config instead.  
+
+- **Start Making Queries**
+
+```
+./manage.py runserver
+```
+
+Go to `http://127.0.0.1:8000/plain/graphql` or 
+`http://127.0.0.1:8000/relay/graphql` to interact with the API using GraphiQL
+
+- **Optional Step: Build JavaScript package**
+```
+npm install
+npm run build
+```
