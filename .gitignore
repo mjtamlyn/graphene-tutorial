@@ -1,3 +1,6 @@
-__pycache__
+*.lock
+*.pyc
+.idea
 build
+db.sqlite
 node_modules

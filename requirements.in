@@ -1,6 +1,6 @@
 Django
-graphene --pre
-graphene-django --pre
+graphene
+graphene-django
 django-graphiql
 django-webpack-loader
 psycopg2

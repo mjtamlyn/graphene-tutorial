@@ -52,7 +52,7 @@ def create_village():
     Person.objects.create(name='Owain', family='Thomas', residence=ysgol_4)
 
 
-def destroy_village():
+def delete_village():
     Person.objects.all().delete()
     House.objects.all().delete()
     Street.objects.all().delete()
